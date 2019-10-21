@@ -1,7 +1,7 @@
 let mic;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth,windowHeight);
   background(0);
     
     mic = new p5.AudioIn();
@@ -12,6 +12,7 @@ function draw() {
   background(0);
     micLevel = mic.getLevel();
     mov = map(micLevel,0,1,10,100);
+    
   
   let boca_w= width/1.75
   noStroke();
@@ -19,17 +20,7 @@ function draw() {
     console.log(mov);
     
 
-     push();
-    //galtes dreta
-     
-      fill('yellow');
-        rect(150+mov*4.5,150,50+mov*4.5,280,10);
-         
-  //galtes esq    
-    
-     fill('yellow');
-    rect(190/mov*4.5,200,350/mov*6.5,250,10);
-    pop();
+  
     
     
     
@@ -43,51 +34,35 @@ function draw() {
   
   //llengua
   fill('pink');
-  rect(0,150,boca_w,120+mov,10);
+  rect(width,150,500,100+mov,10);
   
   
   
   //dents
   fill(255);
-  rect(-20,50-mov,50,50,10);
+  rect(-20,80-mov,50,50,10);
   //vertex(0,200,100);
   fill(255);
-  rect(20,40-mov,50,50,10);
+  rect(20,90-mov,50,50,10);
     fill(255);
-  rect(-70,-90+mov*7.4,40,100,10);
+  rect(-70,-50+mov*7.4,40,100,10);
     fill(255);
-  rect(70,-110+mov*9.5,40,100,10);
+  rect(70,-70+mov*9.5,40,100,10);
   
   
   //barbeta
   fill('yellow');
-  rect(0,330-mov*1.5,boca_w,350+mov+1.5,10);
+  rect(0,400-mov*9.5,boca_w,250+mov+3.5,10);
   pop();
   
   
   //front
-   fill('yellow');
-  rect(0,0,width, height/1.8+mov+5.5);
-  
+ fill('yellow');
+ rect(0,0,width, height/1.8+mov+5.5);
+ 
  
   
-  push();
-    //cella dret
-    noFill();
-  stroke(40);
-  strokeWeight(10+mov);
- 
-    arc(300,75,60,60+mov,radians(230+mov),radians(30*mov));
-pop();
-    push();
-    //cella esq
-      noFill();
-  stroke(40);
-  strokeWeight(10+mov);
-  arc(100,75,60+mov,60,radians(230+mov),radians(30*mov));
- 
-    
-    pop();
+
     
      //ull esquerre
   fill(255);
